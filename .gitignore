@@ -1,17 +1,15 @@
-# Contains Azure secret information
-**/secrets.tfvars
+# as/
+as/hosts
+as/ssh_config
+as/**/*.pem
+as/**/*.csr
+as/**/*.kubeconfig
+as/**/ssh_control-*
+as/*.retry
+as/encryption_config/encryption-config.yaml
 
-# Personal vars
-**/user.tfvars
-
-#  Local .terraform directories
+# tf/
+tf/**/secrets.tfvars
+tf/**/user.tfvars
 **/.terraform/*
-
-# .tfstate files
-*.tfstate
-*.tfstate.*
-
-# .tfvars files
-.gitsecret/keys/random_seed
-
-*.swp
+tf/**/*.tfstate*
