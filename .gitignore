@@ -1,0 +1,17 @@
+# Contains Azure secret information
+**/secrets.tfvars
+
+# Personal vars
+**/user.tfvars
+
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+.gitsecret/keys/random_seed
+
+*.swp
