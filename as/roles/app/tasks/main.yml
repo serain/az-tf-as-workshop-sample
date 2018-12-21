@@ -1,0 +1,16 @@
+- name: Install python3-pip
+  apt:
+    name: python3-pip
+    update_cache: yes
+
+- name: Git clone StoreIt
+  git:
+    repo: 'https://github.com/serain/storeit.git'
+    dest: /opt/storeit
+
+- name: Install Python dependencies
+  shell: pip3 install -r /opt/storeit/requirements.txt
+
+- name: start simple http server in background
+  shell: nohup /opt/storeit/app.py </dev/null >/dev/null 2>&1 &
+  environment: "{{app_env}}"

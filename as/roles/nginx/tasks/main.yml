@@ -1,0 +1,16 @@
+- name: Install nginx
+  apt:
+    name: nginx
+    update_cache: yes
+
+- name: Upload nginx.conf
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
+- name: Enable and restart nginx
+  systemd:
+    name: nginx
+    enabled: yes
+    daemon_reload: yes
+    state: restarted

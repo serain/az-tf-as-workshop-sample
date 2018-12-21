@@ -127,7 +127,7 @@ resource "azurerm_cosmosdb_account" "db" {
     kind = "GlobalDocumentDB"
 
     enable_automatic_failover = true
-    is_virtual_network_filter_enabled = true
+    # is_virtual_network_filter_enabled = true
 
     consistency_policy {
         consistency_level = "BoundedStaleness"
@@ -140,7 +140,7 @@ resource "azurerm_cosmosdb_account" "db" {
         failover_priority = 0
     }
 
-    virtual_network_rule {
-        id = "${azurerm_subnet.sub.id}"
-    }
+    # virtual_network_rule {
+    #     id = "${azurerm_subnet.sub.id}"
+    # }
 }

@@ -1,6 +1,4 @@
 # as/
-as/hosts
-as/ssh_config
 as/**/*.pem
 as/**/*.csr
 as/**/*.kubeconfig
