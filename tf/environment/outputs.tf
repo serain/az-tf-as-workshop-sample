@@ -12,3 +12,7 @@ output "jb-ip" {
 output "gw-ip" {
     value = "${module.sub-front.pip}"
 }
+
+output "cosmosdb-uri" {
+    value = "${module.sub-back.cosmosdb-uri}"
+}

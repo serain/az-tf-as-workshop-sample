@@ -1,3 +1,3 @@
-output "pip"   {
-    value = "${azurerm_public_ip.pip.ip_address}"
+output "cosmosdb-uri" {
+    value = "${azurerm_cosmosdb_account.db.endpoint}"
 }

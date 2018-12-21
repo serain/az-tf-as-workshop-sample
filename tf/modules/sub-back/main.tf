@@ -66,13 +66,6 @@ resource "azurerm_subnet_network_security_group_association" "nsg_association" {
   network_security_group_id = "${azurerm_network_security_group.nsg.id}"
 }
 
-resource "azurerm_public_ip" "pip" {
-  name                               = "app-pip"
-  location                           = "uksouth"
-  resource_group_name                = "${var.rg}"
-  public_ip_address_allocation       = "static"
-}
-
 resource "azurerm_network_interface" "nic" {
   name                               = "app-nic"
   location                           = "uksouth"
@@ -82,7 +75,6 @@ resource "azurerm_network_interface" "nic" {
     name                             = "app-ip"
     subnet_id                        = "${azurerm_subnet.sub.id}"
     private_ip_address_allocation    = "dynamic"
-    public_ip_address_id             = "${azurerm_public_ip.pip.id}"
   }
 }
 
